@@ -65,7 +65,7 @@
                                         </Grid>
 
                                         <Grid Grid.Row="1">
-                                            <TextBlock HorizontalAlignment="Left">Tên ca sỹ</TextBlock>
+                                            <TextBlock HorizontalAlignment="Left" Text="{Binding SingerName}"></TextBlock>
                                         </Grid>
                                     </Grid>
 

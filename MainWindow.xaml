@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:MusicAppMP3"
         xmlns:local="clr-namespace:MusicAppMP3"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         FontFamily="Arial" Height="800" Width="1200" ResizeMode="NoResize" WindowStyle="None">
@@ -13,7 +14,7 @@
 
         <Grid Background="LightGray">
             <Grid Height="200" VerticalAlignment="Top" Background="Black">
-                <Image Source="par1.jpg" Stretch="Fill"/>
+                <Image Stretch="Fill" Source="{DynamicResource ImageSource1}"/>
             </Grid>
             <Grid Width="250" HorizontalAlignment="Left" Background="Black" Margin="0,200,0,0">
                 <StackPanel>
@@ -21,7 +22,7 @@
                     <Button Background="White" Click="btRanking" Margin="10,10,10,10" Height="50">Ranking</Button>
                     <Button Background="White"  Margin="10,10,10,10" Height="50">Artist</Button>
                     <Button Background="White"  Margin="10,10,10,10" Height="50">Radio</Button>
-                   
+
                 </StackPanel>
             </Grid>
         </Grid>

@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:MusicAppMP3"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <BitmapImage x:Key="ImageSource1" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\par1.jpg"/>
+        <BitmapImage x:Key="ImageSource2" >music.gif</BitmapImage>
+
     </Application.Resources>
 </Application>

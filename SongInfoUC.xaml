@@ -32,7 +32,7 @@
           Height="{Binding ActualHeight, ElementName=myCanvas}">
                     <Label Content="{Binding SongName}"
                HorizontalAlignment="Center"
-               VerticalAlignment="Center" 
+               VerticalAlignment="Center" Foreground="#FF0EAA95" Background="#FFF7F7F6" 
         />
                 </Grid>
             </Canvas>

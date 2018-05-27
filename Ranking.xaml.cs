@@ -157,12 +157,29 @@ namespace MusicAppMP3
             HttpRequest http = new HttpRequest();
             string htmlBXH = http.Get(@"http://keeng.vn/bang-xep-hang/song/viet-nam.html").ToString();
             string bxhPattern = @"<div id=""show_audio_play""(.*?)</ul>";
-            var listBXH = Regex.Matches(htmlBXH, bxhPattern, RegexOptions.Singleline);
+            var listBXH = Regex.Matches(htmlBXH, bxhPattern, RegexOptions.Singleline);            
+            AddSongToListSong(ListVN, listBXH[0].ToString());
+
+            HttpRequest http1 = new HttpRequest();
+            string htmlBXH1 = http1.Get(@"http://keeng.vn/bang-xep-hang/song/au-my.html").ToString();           
+            var listBXH1 = Regex.Matches(htmlBXH1, bxhPattern, RegexOptions.Singleline);
+            AddSongToListSong(ListEU, listBXH1[0].ToString());
+
+            HttpRequest http2 = new HttpRequest();
+            string htmlBXH2 = http2.Get(@"http://keeng.vn/bang-xep-hang/song/chau-a.html").ToString();          
+            var listBXH2 = Regex.Matches(htmlBXH2, bxhPattern, RegexOptions.Singleline);
+            AddSongToListSong(ListKO, listBXH2[0].ToString());
 
 
-            var listSongHTML = Regex.Matches(listBXH[0].ToString(), @"<div class=""ka-content""(.*?)</li>", RegexOptions.Singleline);
+
+
+        }
+        void AddSongToListSong(ObservableCollection<Song> listSong, string html)
+        {
+            var listSongHTML = Regex.Matches(html.ToString(), @"<div class=""ka-content""(.*?)</li>", RegexOptions.Singleline);
             for (int i = 0; i < listSongHTML.Count; i++)
             {
+
                 var song = Regex.Matches(listSongHTML[i].ToString(), @"<a\s\S*\stitle=""(.*?)""", RegexOptions.Singleline);
                 string songString = song[0].ToString();
                 int indexSong = songString.IndexOf("title=\"");
@@ -177,9 +194,12 @@ namespace MusicAppMP3
                 string downloadURLt = downloadURL[0].ToString().Replace("amp;", "").Replace("\"", "").Replace("<input type=hidden value=", "").Replace("data-src=", "");
 
                 string savePath = AppDomain.CurrentDomain.BaseDirectory + "Song\\" + songName + ".mp3";
-                ListVN.Add(new Song() { SingerName = singerName, SongName = songName, /*SongURL = URL*//*,*/ STT = i + 1, DownloadURL = downloadURLt, SavePath = savePath });
-            }
 
+                var image=Regex.Matches(listSongHTML[i].ToString(), @"http(.*?)""", RegexOptions.Singleline);
+                string imaget = image[1].ToString().Replace("\"", "");
+
+                listSong.Add(new Song() { SingerName = singerName, SongName = songName,PhotoURL=imaget, /*SongURL = URL*//*,*/ STT = i + 1, DownloadURL = downloadURLt, SavePath = savePath });
+            }
         }
         private void UcSongInfo_BackToMain(object sender, EventArgs e)
         {
