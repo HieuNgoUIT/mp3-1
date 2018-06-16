@@ -14,19 +14,47 @@
 
         <Grid Background="LightGray">
             <Grid Height="200" VerticalAlignment="Top" Background="Black">
-                <Image Stretch="Fill" Source="{DynamicResource ImageSource1}"/>
+                <Image Stretch="Fill" Source="{DynamicResource ImageSource1}" Margin="189,0,0,0"/>
+                <Button Width="20" Height="20" Margin="1170,10,10,170" Click="exit" Background="Black" >
+                    <Image Source="{DynamicResource ImageSource2}" ></Image>
+                </Button>
+                <Button Width="20" Height="20" Margin="1145,10,35,170" Click="hide">
+                    <Image Source="{DynamicResource ImageSource3}"></Image>
+                </Button>
+
             </Grid>
-            <Grid Width="250" HorizontalAlignment="Left" Background="Black" Margin="0,200,0,0">
+            <Grid Width="228" HorizontalAlignment="Left" Background="Black">
                 <StackPanel>
-                    <Button Background="White" Click="btsearch" Margin="10,10,10,10" Height="50">Search</Button>
-                    <Button Background="White" Click="btRanking" Margin="10,10,10,10" Height="50">Ranking</Button>
-                    <Button Background="White"  Margin="10,10,10,10" Height="50">Artist</Button>
-                    <Button Background="White"  Margin="10,10,10,10" Height="50">Radio</Button>
+                    <Button Background="Black" Width="25" Height="25" BorderThickness="0"  HorizontalAlignment="Left" Margin="10,10,0,0">
+                        <Image Source="{DynamicResource ImageSource13}" />
+                    </Button>
+                    <Button Margin="74,210,80,10"  Click="btsearch"  Background="Black" Height="83" BorderThickness="0">
+                        <StackPanel>
+                            <Image Source="{DynamicResource ImageSource9}" Width="50" Height="50"/>
+                            <TextBlock Text="Search" Background="White"/>
+                        </StackPanel>
+
+                    </Button>
+                    <Button Background="Black" Click="btRanking" Height="75" Margin="74,10,80,10" BorderThickness="0">
+                        <StackPanel>
+                            <Image Source="{DynamicResource ImageSource7}" Width="50" Height="50"/>
+                            <TextBlock Text="Ranking" Background="White"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Background="Black" Click="openPlaylist" Height="73" Margin="74,10,80,10" BorderThickness="0">
+                        <StackPanel>
+                            <Image Source="{DynamicResource ImageSource8}" Width="50" Height="50"/>
+                            <TextBlock Text="Local Files" Background="White"/>
+                        </StackPanel>
+                    </Button>
+
 
                 </StackPanel>
             </Grid>
         </Grid>
-        <Frame x:Name="Main" Margin="250,200,0,0"></Frame>
+        <Frame x:Name="Main" Margin="229,200,0,0">
+
+        </Frame>
 
     </Grid>
 

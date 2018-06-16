@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,8 +29,8 @@ namespace MusicAppMP3
     /// </summary>
     public partial class MainWindow : Window
     {
-       
 
+       
         public MainWindow()
         {
             InitializeComponent();
@@ -46,7 +47,18 @@ namespace MusicAppMP3
         {
             Main.Content = new Ranking();
         }
+       private void openPlaylist(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Playlist();
+        }
+        private void exit(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        private void hide(object sender, RoutedEventArgs e)
+        {
+           WindowState= WindowState.Minimized;
 
-       
+        }
     }
 }

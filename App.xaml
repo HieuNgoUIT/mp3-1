@@ -6,7 +6,18 @@
     <Application.Resources>
 
         <BitmapImage x:Key="ImageSource1" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\par1.jpg"/>
-        <BitmapImage x:Key="ImageSource2" >music.gif</BitmapImage>
+        <BitmapImage x:Key="ImageSource2" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\de1.png"/>
+        <BitmapImage x:Key="ImageSource3" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\mini1.png"/>
+        <BitmapImage x:Key="ImageSource4" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\play.png"/>
+        <BitmapImage x:Key="ImageSource5" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\pause.png"/>
+        <BitmapImage x:Key="ImageSource6" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\stop.png"/>
+        <BitmapImage x:Key="ImageSource7" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\bxh.png"/>
+        <BitmapImage x:Key="ImageSource8" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\file.png"/>
+        <BitmapImage x:Key="ImageSource9" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\search.png"/>
+        <BitmapImage x:Key="ImageSource10" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\openfile.png"/>
+        <BitmapImage x:Key="ImageSource11" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\next.png"/>
+        <BitmapImage x:Key="ImageSource12" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\previous.png"/>
+        <BitmapImage x:Key="ImageSource13" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\menu.png"/>
 
     </Application.Resources>
 </Application>

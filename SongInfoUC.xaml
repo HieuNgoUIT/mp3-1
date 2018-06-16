@@ -71,7 +71,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock x:Name="txblPosition"></TextBlock>
                     <Slider Grid.Column="1" PreviewMouseDown="sdDuration_MouseDown" PreviewMouseUp="sdDuration_MouseUp" ValueChanged="sdDuration_ValueChanged" x:Name="sdDuration" HorizontalAlignment="Stretch"></Slider>
-                    <TextBlock x:Name="txblDuration" Grid.Column="2"></TextBlock>
+                    <TextBlock x:Name="txblDuration" Grid.Column="2" HorizontalAlignment="Right" Width="40"></TextBlock>
                 </Grid>               
             </Grid>
         </Grid>

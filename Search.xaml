@@ -29,7 +29,7 @@
                 <Button Click="Button_Click1" Width="200">Search</Button>
             </Grid>
             <Grid Grid.Column="0" Grid.Row="0">
-                <TextBox x:Name="tbSearch"  >Chay ngay di</TextBox>
+                <TextBox x:Name="tbSearch"  >Mời bạn nhập bài hát tìm kiếm</TextBox>
             </Grid>
             <Grid  Grid.Row="1" Grid.ColumnSpan="2">
                 <Button x:Name="bt0" Click="bh0click"></Button>
