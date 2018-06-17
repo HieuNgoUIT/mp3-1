@@ -30,12 +30,14 @@ namespace MusicAppMP3
         private int vShuffle = 0; // bat che do shuffle
         private Random r = new Random();
         private int biencu; //bien bai hat cu
+        private int vRepeat;
         public Playlist()
         {
             InitializeComponent();
             sdDuration.Visibility = Visibility.Hidden; // an thanh thoi gian bai hat
             btplay.Visibility = Visibility.Hidden; //an nut play
             shuffleon.Visibility = Visibility.Hidden;//an nut shuffle on
+            btrpoff.Visibility = Visibility.Hidden;
           
         }
         // event moi khi 1 bai hat duoc mo
@@ -161,7 +163,13 @@ namespace MusicAppMP3
         }
         private void end(object sender, RoutedEventArgs e)
         {
-            if (vShuffle == 0)
+            if(vRepeat==1)
+            {
+                lbSong.SelectedIndex = lbSong.SelectedIndex;
+                Uri uri = new Uri(paths[lbSong.SelectedIndex]);
+                mediaPlayer.Source = uri;
+            }
+            else if (vShuffle == 0)
             {
 
                 lbSong.SelectedIndex += 1;
@@ -180,6 +188,7 @@ namespace MusicAppMP3
                 mediaPlayer.Source = uri;
             }
            
+           
         }
         private void shuffleturnon(object sender, RoutedEventArgs e)
         {
@@ -192,6 +201,18 @@ namespace MusicAppMP3
             vShuffle = 0;
             shuffleoff.Visibility = Visibility.Visible;
             shuffleon.Visibility = Visibility.Hidden;
+        }
+        private void clickrpon(object sender, RoutedEventArgs e)
+        {
+            btrpon.Visibility = Visibility.Hidden;
+            btrpoff.Visibility = Visibility.Visible;
+            vRepeat = 1;
+        }
+        private void clickrpoff(object sender, RoutedEventArgs e)
+        {
+            btrpon.Visibility = Visibility.Visible;
+            btrpoff.Visibility = Visibility.Hidden;
+            vRepeat = 0;
         }
     }
 }
