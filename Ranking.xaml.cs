@@ -155,12 +155,14 @@ namespace MusicAppMP3
         void CrawlBXH()
         {
             HttpRequest http = new HttpRequest();
+            //lay bxh vn
             string htmlBXH = http.Get(@"http://keeng.vn/bang-xep-hang/song/viet-nam.html").ToString();
             string bxhPattern = @"<div id=""show_audio_play""(.*?)</ul>";
             var listBXH = Regex.Matches(htmlBXH, bxhPattern, RegexOptions.Singleline);            
             AddSongToListSong(ListVN, listBXH[0].ToString());
 
             HttpRequest http1 = new HttpRequest();
+            //lay bxh aumy
             string htmlBXH1 = http1.Get(@"http://keeng.vn/bang-xep-hang/song/au-my.html").ToString();           
             var listBXH1 = Regex.Matches(htmlBXH1, bxhPattern, RegexOptions.Singleline);
             AddSongToListSong(ListEU, listBXH1[0].ToString());
@@ -176,7 +178,9 @@ namespace MusicAppMP3
         }
         void AddSongToListSong(ObservableCollection<Song> listSong, string html)
         {
+            //lay tung bai hat va add vao listbxh
             var listSongHTML = Regex.Matches(html.ToString(), @"<div class=""ka-content""(.*?)</li>", RegexOptions.Singleline);
+            //tra ve 20 bai hat, bat dau to bai dau tien
             for (int i = 0; i < listSongHTML.Count; i++)
             {
 
@@ -197,7 +201,7 @@ namespace MusicAppMP3
 
                 var image=Regex.Matches(listSongHTML[i].ToString(), @"http(.*?)""", RegexOptions.Singleline);
                 string imaget = image[1].ToString().Replace("\"", "");
-
+                //add no vao bxh 
                 listSong.Add(new Song() { SingerName = singerName, SongName = songName,PhotoURL=imaget, /*SongURL = URL*//*,*/ STT = i + 1, DownloadURL = downloadURLt, SavePath = savePath });
             }
         }

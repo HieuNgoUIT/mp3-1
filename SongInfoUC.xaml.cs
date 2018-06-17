@@ -98,6 +98,7 @@ namespace MusicAppMP3
             if (!File.Exists(songName))            
             {
                 WebClient wb = new WebClient();
+                // truyen vao url download, ve ten bai hat
                 wb.DownloadFile(SongInfo.DownloadURL, songName);
             }
         }

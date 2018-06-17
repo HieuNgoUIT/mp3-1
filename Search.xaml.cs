@@ -120,9 +120,13 @@ namespace MusicAppMP3
         void CrawLKQ()
         {
             HttpRequest html = new HttpRequest();
+            //nhap vao input bai hat can search
             string searchname = tbSearch.Text.Replace(" ", "+");
             string searchname1 = (@"https://nhac.vn/search?q=" + searchname);
+            // tra ve html cua trang web search
             string htmlink = html.Get(searchname1).ToString();
+
+            //loc ket qua tu html sang bai hat kiem duoc
             var sResult = Regex.Matches(htmlink, @"<li class=""song-list-new-item(.*?)</li>", RegexOptions.Singleline);
             if (sResult.Count == 0)
             {
@@ -130,49 +134,50 @@ namespace MusicAppMP3
             }
             else
             {
-                string song = sResult[0].ToString();
-                songlink = Addsong(bt0, song);
-                Ss = crawlasong(songlink, 0);
+                if (sResult.Count == 5)
+                {
+                    //lay bai hat dau tien tu sresult
+                    string song = sResult[0].ToString();
+                    songlink = Addsong(bt0, song);
+                    Ss = crawlasong(songlink, 0);
 
-                string song1 = sResult[1].ToString();
-                songlink1 = Addsong(bt1, song1);
-                Ss1 = crawlasong(songlink1, 1);
+                    string song1 = sResult[1].ToString();
+                    songlink1 = Addsong(bt1, song1);
+                    Ss1 = crawlasong(songlink1, 1);
 
-                string song2 = sResult[2].ToString();
-                songlink2 = Addsong(bt2, song2);
-                Ss2 = crawlasong(songlink2, 2);
+                    string song2 = sResult[2].ToString();
+                    songlink2 = Addsong(bt2, song2);
+                    Ss2 = crawlasong(songlink2, 2);
 
-                string song3 = sResult[3].ToString();
-                songlink3 = Addsong(bt3, song3);
-                Ss3 = crawlasong(songlink3, 3);
+                    string song3 = sResult[3].ToString();
+                    songlink3 = Addsong(bt3, song3);
+                    Ss3 = crawlasong(songlink3, 3);
 
 
-                string song4 = sResult[4].ToString();
-                songlink4 = Addsong(bt4, song4);
-                Ss4 = crawlasong(songlink4, 4);
+                    string song4 = sResult[4].ToString();
+                    songlink4 = Addsong(bt4, song4);
+                    Ss4 = crawlasong(songlink4, 4);
+                }
             }
         }
 
         Song crawlasong(string slink, int i)
         {
-
             Song any = new Song();
-
             string specific = slink;
             HttpRequest spehtm = new HttpRequest();
             string htmlink = spehtm.Get(specific).ToString();
             var Result = Regex.Matches(htmlink, @"sources:(.*?):""(.*?)""", RegexOptions.Singleline);
-
+            // link dowload
             string resultt = Result[0].ToString();
             int indexurl = resultt.IndexOf("file");
             string songurl = resultt.Substring(indexurl, resultt.Length - indexurl - 1).Replace(@"\/", @"/").Replace("file\":\"", "").Replace(" ", "");
             any.DownloadURL = songurl;
-
+            // hinh anh
             var ketquahinhanh= Regex.Matches(htmlink, @"image: '(.*?)'", RegexOptions.Singleline);
             string pturl = ketquahinhanh[0].ToString().Replace("image: '","").Replace("'","");
             any.PhotoURL = pturl;
-
-
+            //lyric 
             var ketqualyric= Regex.Matches(htmlink, @"dsc-body"">(.*?)<div", RegexOptions.Singleline);
             string lyricurl=ketqualyric[0].ToString().Replace("<br />", "").Replace("dsc-body\">", "").Replace("<div","");
             any.Lyric = lyricurl;
@@ -186,26 +191,27 @@ namespace MusicAppMP3
             CrawLKQ();
         }
 
+        //lay chi tiet cu the tung bai hat nhu cai si, ten ,....
         private string Addsong(Button a, string httt)
         {
+            //ten bai hat
             var songandsinger = Regex.Matches(httt.ToString(), @"<a title=""(.*?)""", RegexOptions.Singleline);
             string songString = songandsinger[0].ToString();
             int indexSong = songString.IndexOf("title=\"");
             string songName = songString.Substring(indexSong, songString.Length - indexSong - 1).Replace("title=\"", "");
 
+            //ten ca si
             string singerString = songandsinger[1].ToString();
             int indexSinger = singerString.IndexOf("title=\"");
             string singerName = singerString.Substring(indexSinger, singerString.Length - indexSinger - 1).Replace("title=\"", "");
 
+            //tra ve ket qua vao nut button
             a.Content = songName + "-" + singerName;
-
+            // link download bai hat
             var url = Regex.Matches(httt.ToString(), @"<a href=""(.*?)""", RegexOptions.Singleline);
             string urlstring = url[0].ToString();
             int indexurl = urlstring.IndexOf("href=\"");
-            string songurl = urlstring.Substring(indexurl, urlstring.Length - indexurl - 1).Replace("href=\"", "");
-
-            
-
+            string songurl = urlstring.Substring(indexurl, urlstring.Length - indexurl - 1).Replace("href=\"", "");         
             return songurl;
 
         }
@@ -232,13 +238,13 @@ namespace MusicAppMP3
             }
         }
 
-
+        // dua den ham songinfo de download va play
         private void bh0click(object sender, RoutedEventArgs e)
         {
             Ss.SongName = bt0.Content.ToString();
+            // c: asus:debug\song
             Ss.SavePath = AppDomain.CurrentDomain.BaseDirectory + "Song\\" + Ss.SongName + ".mp3";
             currentSong = Ss;
-
             aSong.Visibility = Visibility.Hidden;
             ucSongInfo.Visibility = Visibility.Visible;
             ucSongInfo.SongInfo = Ss;
@@ -285,37 +291,7 @@ namespace MusicAppMP3
             aSong.Visibility = Visibility.Visible;
             ucSongInfo.Visibility = Visibility.Hidden;
         }
-        //private void ucSongInfo_PrevioursClicked(object sender, EventArgs e)
-        //{
-        //    if (IsCheckVN)
-        //    {
-        //        ChangeToNextWSong(ListVN, 0, -1);
-        //    }
-        //    else if (IsCheckEU)
-        //    {
-        //        ChangeToNextWSong(ListEU, 0, -1);
-        //    }
-        //    else
-        //    {
-        //        ChangeToNextWSong(ListKO, 0, -1);
-        //    }
-        //}
 
-        //private void ucSongInfo_NextClicked(object sender, EventArgs e)
-        //{
-        //    if (IsCheckVN)
-        //    {
-        //        ChangeToNextWSong(ListVN, 9, 1);
-        //    }
-        //    else if (IsCheckEU)
-        //    {
-        //        ChangeToNextWSong(ListEU, 9, 1);
-        //    }
-        //    else
-        //    {
-        //        ChangeToNextWSong(ListKO, 9, 1);
-        //    }
-        //}
     
     }
 }

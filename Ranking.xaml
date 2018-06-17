@@ -26,18 +26,18 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0">
-                    <ToggleButton IsChecked="{Binding IsCheckVN}">BXH Việt Nam</ToggleButton>
+                <Grid Grid.Column="0" Margin="0,0,0,-10" Height="50">
+                    <ToggleButton IsChecked="{Binding IsCheckVN}" FontFamily="Arial" FontSize="13">BXH Việt Nam</ToggleButton>
                 </Grid>
-                <Grid Grid.Column="1">
-                    <ToggleButton IsChecked="{Binding IsCheckEU}">BXH Âu Mỹ</ToggleButton>
+                <Grid Grid.Column="1" Margin="0,0,0,-10" Height="50">
+                    <ToggleButton IsChecked="{Binding IsCheckEU}" FontFamily="Arial" FontSize="13">BXH Âu Mỹ</ToggleButton>
                 </Grid>
-                <Grid Grid.Column="2">
-                    <ToggleButton IsChecked="{Binding IsCheckKO}">BXH Hàn Quốc</ToggleButton>
+                <Grid Grid.Column="2" Margin="0,0,0,-10" Height="50">
+                    <ToggleButton IsChecked="{Binding IsCheckKO}" FontFamily="Arial" FontSize="13">BXH Hàn Quốc</ToggleButton>
                 </Grid>
             </Grid>
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" Margin="0,10,0,0">
                 <ListBox x:Name="lsbTopSongs" HorizontalContentAlignment="Stretch">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
@@ -51,7 +51,7 @@
 
                                     <Grid>
                                         <TextBlock HorizontalAlignment="Center" 
-                               VerticalAlignment="Center">01</TextBlock>
+                               VerticalAlignment="Center" Text="{Binding STT}"></TextBlock>
                                     </Grid>
 
                                     <Grid Grid.Column="1">
@@ -61,7 +61,7 @@
                                         </Grid.RowDefinitions>
 
                                         <Grid>
-                                            <TextBlock HorizontalAlignment="Left" Text="{Binding SongName}"></TextBlock>
+                                            <TextBlock HorizontalAlignment="Left" Text="{Binding SongName}" FontSize="13"></TextBlock>
                                         </Grid>
 
                                         <Grid Grid.Row="1">

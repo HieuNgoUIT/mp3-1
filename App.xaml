@@ -18,6 +18,8 @@
         <BitmapImage x:Key="ImageSource11" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\next.png"/>
         <BitmapImage x:Key="ImageSource12" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\previous.png"/>
         <BitmapImage x:Key="ImageSource13" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\menu.png"/>
+        <BitmapImage x:Key="ImageSource14" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\shuffle.png"/>
+        <BitmapImage x:Key="ImageSource15" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\shuffle2.png"/>
 
     </Application.Resources>
 </Application>

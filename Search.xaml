@@ -26,25 +26,25 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right"  >
-                <Button Click="Button_Click1" Width="200">Search</Button>
+                <Button Click="Button_Click1" Width="200" Background="Black" Foreground="White" Content="SEARCH" FontWeight="Bold"/>
             </Grid>
-            <Grid Grid.Column="0" Grid.Row="0">
-                <TextBox x:Name="tbSearch"  >Mời bạn nhập bài hát tìm kiếm</TextBox>
+            <Grid Grid.Column="0" Grid.Row="0" Background="White">
+                <TextBox x:Name="tbSearch"  Foreground="Black" FontSize="20" HorizontalAlignment="Center" BorderThickness="0" VerticalAlignment="Center">Mời bạn nhập bài hát tìm kiếm</TextBox>
             </Grid>
             <Grid  Grid.Row="1" Grid.ColumnSpan="2">
-                <Button x:Name="bt0" Click="bh0click"></Button>
+                <Button x:Name="bt0" Click="bh0click" Background="Black" Foreground="White"></Button>
             </Grid>
             <Grid  Grid.Row="2" Grid.ColumnSpan="2">
-                <Button x:Name="bt1" Click="bh1click"></Button>
+                <Button x:Name="bt1" Click="bh1click" Background="Black" Foreground="White"></Button>
             </Grid>
             <Grid Grid.Row="3" Grid.ColumnSpan="2">
-                <Button x:Name="bt2" Click="bh2click"></Button>
+                <Button x:Name="bt2" Click="bh2click" Background="Black" Foreground="White"></Button>
             </Grid>
             <Grid Grid.Row="4" Grid.ColumnSpan="2">
-                <Button x:Name="bt3" Click="bh3click"></Button>
+                <Button x:Name="bt3" Click="bh3click" Background="Black" Foreground="White"></Button>
             </Grid>
             <Grid  Grid.Row="5" Grid.ColumnSpan="2">
-                <Button x:Name="bt4" Click="bh4click"></Button>
+                <Button x:Name="bt4" Click="bh4click" Background="Black" Foreground="White"></Button>
             </Grid>
            
         </Grid>

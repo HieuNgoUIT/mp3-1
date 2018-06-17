@@ -15,7 +15,7 @@
         <Grid Height="160" VerticalAlignment="Bottom" Background="Black" >
             <MediaElement LoadedBehavior="Manual" Name="mediaPlayer" MediaOpened="MyMediaElement_MediaOpened" MediaEnded="end"></MediaElement>
             <Button Click="openMusic" Background="Black" Margin="0,0,0,125" >
-                <TextBlock Text="  Open" Foreground="White"/>
+                <TextBlock Text="OPEN" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" FontSize="14"/>
 
             </Button>
             <Button Click="PlayMusic" Background="black" Width="50" Margin="128,79,122,37" x:Name="btplay" >
@@ -30,6 +30,12 @@
             </Button>
             <Button   Background="black" Click="previous" Width="50" Margin="78,79,172,37">
                 <Image Source="{DynamicResource ImageSource12}" Height="43" Width="40"></Image>
+            </Button>
+            <Button   Background="black" Click="shuffleturnon" Width="50" Margin="30,79,220,37" x:Name="shuffleoff">
+                <Image Source="{DynamicResource ImageSource14}" Height="43" Width="40"></Image>
+            </Button>
+            <Button   Background="white" Click="shuffleturnoff" Width="50" Margin="30,79,220,37" x:Name="shuffleon">
+                <Image Source="{DynamicResource ImageSource15}" Height="43" Width="40"></Image>
             </Button>
             <TextBlock x:Name="txblPosition" Margin="0,123,0,0" Background="Black" Width="30" HorizontalAlignment="Left" Foreground="White"></TextBlock>
             <Slider ValueChanged="sdDuration_ValueChanged" PreviewMouseUp="timeSlider_MouseLeftButtonUp"  x:Name="sdDuration" Margin="30,123,35,16"  />

@@ -28,25 +28,27 @@
                     <Button Background="Black" Width="25" Height="25" BorderThickness="0"  HorizontalAlignment="Left" Margin="10,10,0,0">
                         <Image Source="{DynamicResource ImageSource13}" />
                     </Button>
-                    <Button Margin="74,210,80,10"  Click="btsearch"  Background="Black" Height="83" BorderThickness="0">
+                    <Button Margin="57,210,80,10"  Click="btsearch"  Background="Black" Height="109" BorderThickness="0">
                         <StackPanel>
                             <Image Source="{DynamicResource ImageSource9}" Width="50" Height="50"/>
-                            <TextBlock Text="Search" Background="White"/>
+                            <TextBlock Text="SEARCH" Background="Black" Foreground="White"/>
                         </StackPanel>
 
                     </Button>
-                    <Button Background="Black" Click="btRanking" Height="75" Margin="74,10,80,10" BorderThickness="0">
+                    <Button Background="Black" Click="btRanking" Height="105" Margin="57,10,80,10" BorderThickness="0">
                         <StackPanel>
                             <Image Source="{DynamicResource ImageSource7}" Width="50" Height="50"/>
-                            <TextBlock Text="Ranking" Background="White"/>
+                            <TextBlock Text="RANKING" Background="Black" Foreground="White"/>
                         </StackPanel>
                     </Button>
-                    <Button Background="Black" Click="openPlaylist" Height="73" Margin="74,10,80,10" BorderThickness="0">
+                    <Button Background="Black" Click="openPlaylist" Height="105" Margin="57,10,80,10" BorderThickness="0">
                         <StackPanel>
                             <Image Source="{DynamicResource ImageSource8}" Width="50" Height="50"/>
-                            <TextBlock Text="Local Files" Background="White"/>
+                            <TextBlock Text="LOCAL FILES" Background="Black" Foreground="White" FontSize="10"/>
                         </StackPanel>
                     </Button>
+
+                   
 
 
                 </StackPanel>

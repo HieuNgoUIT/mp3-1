@@ -51,6 +51,7 @@ namespace MusicAppMP3
         {
             Main.Content = new Playlist();
         }
+       
         private void exit(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
