@@ -22,6 +22,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using xNet;
 
+
 namespace MusicAppMP3
 {
     /// <summary>
@@ -60,6 +61,10 @@ namespace MusicAppMP3
         {
            WindowState= WindowState.Minimized;
 
+        }
+        private void openRadio(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Radio();
         }
     }
 }

@@ -68,6 +68,9 @@
     <Compile Include="Playlist.xaml.cs">
       <DependentUpon>Playlist.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Radio.xaml.cs">
+      <DependentUpon>Radio.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ranking.xaml.cs">
       <DependentUpon>Ranking.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Playlist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Radio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

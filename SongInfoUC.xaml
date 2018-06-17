@@ -59,7 +59,7 @@
                         <Button Click="Button_Click_4" Background="White" >Next</Button>
                     </Grid>
                     <Grid Grid.Column="3">
-                        <ToggleButton Checked="ToggleButton_Checked" Background="White" >1.0</ToggleButton>
+                        <ToggleButton Checked="ToggleButton_Checked" Background="White"  >1.0</ToggleButton>
                     </Grid>
                 </Grid>
                 

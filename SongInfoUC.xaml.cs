@@ -195,6 +195,7 @@ namespace MusicAppMP3
             }
             else
             {
+                
                 SpeedRatio = 1;       
             }
             mdAudio.SpeedRatio = SpeedRatio;

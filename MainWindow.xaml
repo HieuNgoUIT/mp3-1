@@ -48,8 +48,12 @@
                         </StackPanel>
                     </Button>
 
-                   
-
+                    <Button Background="Black" Click="openRadio" Height="105" Margin="57,10,80,10" BorderThickness="0">
+                        <StackPanel>
+                            <Image Source="{DynamicResource ImageSource16}" Width="50" Height="50"/>
+                            <TextBlock Text="RADIO" Background="Black" Foreground="White" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
 
                 </StackPanel>
             </Grid>
