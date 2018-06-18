@@ -10,6 +10,7 @@
 
     <Grid>
         <Image Source="{DynamicResource ImageSource17}"  Stretch="Fill"/>
+        <Button Background="Black" Foreground="White" HorizontalAlignment="Stretch" Height="50" Click="stoping" VerticalAlignment="Top">STOP</Button>
         <Button Background="Black" Foreground="White" HorizontalAlignment="Stretch" Height="50" Click="finding" VerticalAlignment="Bottom">SEARCHING</Button>
         <Button  Background="Black" Foreground="White" HorizontalAlignment="Right" Width="50" Height="50" Click="nextrad" VerticalAlignment="Bottom" >NEXT</Button>
         <Button  Background="Black" Foreground="White" HorizontalAlignment="Left" Height="50" Click="prerad" VerticalAlignment="Bottom">PREVIOUS</Button>

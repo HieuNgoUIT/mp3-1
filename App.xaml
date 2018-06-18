@@ -24,6 +24,7 @@
         <BitmapImage x:Key="ImageSource17" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\radiopic.png"/>
         <BitmapImage x:Key="ImageSource18" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\repeaton.png"/>
         <BitmapImage x:Key="ImageSource19" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\repeatoff.png"/>
+        <BitmapImage x:Key="ImageSource20" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\ASUS\mp3,1\alarm.png"/>
 
     </Application.Resources>
 </Application>

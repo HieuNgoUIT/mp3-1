@@ -66,5 +66,9 @@ namespace MusicAppMP3
         {
             Main.Content = new Radio();
         }
+        private void about(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Product established by Nhom12 UIT");
+        }
     }
 }

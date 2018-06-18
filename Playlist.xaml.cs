@@ -25,12 +25,14 @@ namespace MusicAppMP3
        // private MediaPlayer mediaPlayer = new MediaPlayer();
         string[] files, paths;
         DispatcherTimer timer;
+        DispatcherTimer timer1;//timemer dong ho
         private TimeSpan TotalTime;
         private double songposition;
         private int vShuffle = 0; // bat che do shuffle
         private Random r = new Random();
         private int biencu; //bien bai hat cu
         private int vRepeat;
+        private int time = 0;
         public Playlist()
         {
             InitializeComponent();
@@ -213,6 +215,32 @@ namespace MusicAppMP3
             btrpon.Visibility = Visibility.Visible;
             btrpoff.Visibility = Visibility.Hidden;
             vRepeat = 0;
+        }
+        private void ChangeMediaVolume(object sender, RoutedPropertyChangedEventArgs<double> args)
+        {
+            mediaPlayer.Volume = (double)volumeSlider.Value;
+        }
+        private void setalarm(object sender, RoutedEventArgs args)
+        {
+            time =Convert.ToInt32( TBCountDown.Text)*60;
+            timer1 = new DispatcherTimer();
+            timer1.Interval = new TimeSpan(0, 0, 1);
+            timer1.Tick += new EventHandler(dispatcherTimer2_Tick);
+            timer1.Start();
+        }
+        private void dispatcherTimer2_Tick(object sender, EventArgs args)
+        {
+            if (time >0)
+            {
+                time--;
+                TBCountDown.Text = string.Format("00:0{0}:{1}", time / 60, time % 60);           
+            }
+            else
+            {
+                timer1.Stop();
+                mediaPlayer.Stop();
+                MessageBox.Show("Đã hết giờ hệ thống");
+            }
         }
     }
 }

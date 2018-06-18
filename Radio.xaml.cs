@@ -57,5 +57,9 @@ namespace MusicAppMP3
             mda.Play();
             }
         }
+        private void stoping(object sender, RoutedEventArgs e)
+        {
+            mda.Stop();
+        }
     }
 }

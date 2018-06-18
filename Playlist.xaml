@@ -9,7 +9,15 @@
       Title="Playlist">
 
     <Grid Background="#FF302D2D" >
+        <StackPanel Background="White" Margin="-507,-234,707,434" Width="100" Height="100" >
+            <TextBox VerticalAlignment="Center" x:Name="TBCountDown" Height="72" Width="100" Text="Type in your Minutes" TextWrapping="Wrap" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0"/>
+            <Button  VerticalAlignment="Bottom" Click="setalarm" Height="28" RenderTransformOrigin="0.5,0.5" Background="Black" Margin="-1,0,0,0">
+                <Image Source="{DynamicResource ImageSource20}" ></Image>
+            </Button>
+                    
+           
 
+        </StackPanel>
         <ListBox Name="lbSong" SelectionChanged="lbSong_SelectionChanged"
                         ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="0,0,0,55"/>
         <Grid Height="160" VerticalAlignment="Bottom" Background="Black" >
@@ -24,7 +32,7 @@
             <Button   Background="black" Click="PauseMusic" Width="50" Margin="128,79,122,37" x:Name="btpause" >
                 <Image Source="{DynamicResource ImageSource5}" Height="43" Width="40"></Image>
             </Button>
-          
+
             <Button   Background="black" Click="next" Width="50" Margin="178,79,72,37">
                 <Image Source="{DynamicResource ImageSource11}" Height="43" Width="40"></Image>
             </Button>
@@ -34,8 +42,8 @@
             <Button   Background="White" Click="clickrpoff" Width="50" Margin="228,79,22,37" x:Name="btrpoff">
                 <Image Source="{DynamicResource ImageSource19}" Height="43" Width="40"></Image>
             </Button>
-            
-            
+
+
             <Button   Background="black" Click="previous" Width="50" Margin="78,79,172,37">
                 <Image Source="{DynamicResource ImageSource12}" Height="43" Width="40"></Image>
             </Button>
@@ -45,7 +53,11 @@
             <Button   Background="white" Click="shuffleturnoff" Width="50" Margin="30,79,220,37" x:Name="shuffleon">
                 <Image Source="{DynamicResource ImageSource15}" Height="43" Width="40"></Image>
             </Button>
-            
+
+            <TextBlock Foreground="White"   HorizontalAlignment="Right" Margin="0,35,70,0">VOLUME</TextBlock>
+            <Slider Name="volumeSlider"  ValueChanged="ChangeMediaVolume" 
+       Minimum="0" Maximum="1" Value="0.5" Width="70" Margin="230,35,0,107" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+
             <TextBlock x:Name="txblPosition" Margin="0,123,0,0" Background="Black" Width="30" HorizontalAlignment="Left" Foreground="White"></TextBlock>
             <Slider ValueChanged="sdDuration_ValueChanged" PreviewMouseUp="timeSlider_MouseLeftButtonUp"  x:Name="sdDuration" Margin="30,123,35,16"  />
             <TextBlock x:Name="txblDuration" HorizontalAlignment="Right" Width="35" Margin="0,123,0,0" Background="Black" Foreground="White"/>
